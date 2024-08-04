@@ -7,7 +7,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 const app = express(); 
 dotenv.config()
-const PORT =process.env.PORT;
+const PORT =3000;
 app.use(bodyParser.json())
 app.use(cors({
   origin:true,
@@ -23,7 +23,7 @@ app.use('/api',userRouter)
 app.use('/api',recipeRouter)
 
 mongoose
-  .connect(process.env.MONGO_URL,
+  .connect("mongodb+srv://shivyanshsharma2018:iamnitian@cluster0.c9eerdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     {
       dbName: "Food_Recipe_MERN_App",
     }
